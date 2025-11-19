@@ -1,0 +1,352 @@
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.app-nav {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 2px solid #444;
+    margin-bottom: 2rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-button {
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 3px solid transparent;
+    position: relative;
+    top: 2px;
+    white-space: nowrap;
+}
+
+.nav-button:hover {
+    color: #fff;
+}
+
+.nav-button.active {
+    color: #61dafb;
+    border-bottom: 3px solid #61dafb;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.sticky-note {
+    background: #fdfd96;
+    color: #333;
+    padding: 1.5rem;
+    min-height: 250px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sticky-note:hover {
+    transform: scale(1.03);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sticky-note-content {
+    flex-grow: 1;
+}
+
+.sticky-note p {
+    white-space: pre-wrap;
+}
+
+.sticky-note h3 {
+    margin-top: 1rem;
+    color: #555;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 10px;
+}
+
+.note-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.sticky-note input[type="text"],
+.sticky-note textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.sticky-note input[type="text"] {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.sticky-note textarea {
+    font-size: 1.1rem;
+    flex-grow: 1;
+    resize: none;
+}
+
+.sticky-note input[type="text"]:focus,
+.sticky-note textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #007bff;
+}
+
+
+.sticky-note.editing {
+    animation: pulse-glow 2s infinite;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.button:hover { opacity: 0.8; }
+.button-primary { background-color: #61dafb; color: #282c34; }
+.button-danger { background-color: #e06c75; color: white; }
+.button-secondary { background-color: #98c379; color: #282c34; }
+
+.tag-base {
+    padding: 6px 12px;
+    border-radius: 99px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: -apple-system, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tag-color-1 { background-color: #f7a278; color: #333; }
+.tag-color-2 { background-color: #a4e5e0; color: #333; }
+.tag-color-3 { background-color: #f9d64a; color: #333; }
+.tag-color-4 { background-color: #c09bd8; color: #333; }
+.tag-color-5 { background-color: #f19292; color: #333; }
+.tag-color-6 { background-color: #92c4f1; color: #333; }
+
+.tag-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #444;
+}
+
+.tag-filter-button {
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.6;
+}
+
+.tag-filter-button:hover {
+    opacity: 0.8;
+}
+
+.tag-filter-button.active {
+    opacity: 1.0;
+    border-color: #f0f0f0;
+
+}
+
+.tag-filter-button.all-tags,
+.tag-filter-button.no-tags {
+    background: #4a505c;
+    color: #f0f0f0;
+    border: 1px solid #4a505c;
+    opacity: 0.8;
+}
+
+.tag-filter-button.all-tags:hover,
+.tag-filter-button.no-tags:hover {
+    background: #5a606c;
+    opacity: 1;
+}
+
+.tag-filter-button.all-tags.active,
+.tag-filter-button.no-tags.active {
+    background: #61dafb;
+    color: #282c34;
+    border-color: #61dafb;
+    opacity: 1;
+    font-weight: 600;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tag-pill {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.tag-pill:hover {
+    transform: scale(1.05);
+}
+
+.selected-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.selected-tag {
+    padding: 4px 6px 4px 10px;
+}
+
+.selected-tag button {
+    background: #282c34;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding: 0;
+    font-weight: bold;
+}
+
+.tag-picker {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+.tag-picker-tag {
+    display: inline-flex;
+    align-items: center;
+    background: #f0f0f0;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    border-radius: 99px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: -apple-system, sans-serif;
+    margin: 4px;
+    position: relative;
+}
+.tag-picker-tag:hover {
+    background: #e0e0e0;
+}
+
+.tag-picker-delete-button {
+    background: #e06c75;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0;
+    transition: all 0.2s;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    opacity: 0;
+}
+
+.tag-picker-tag:hover .tag-picker-delete-button {
+    opacity: 1;
+}
+
+.tag-picker-tag.new {
+    background: #98c379;
+    color: #282c34;
+    font-weight: bold;
+}
+
+.tag-creator {
+    display: inline-flex;
+    gap: 0.25rem;
+    margin: 4px;
+    align-items: center;
+}
+
+.tag-creator input {
+    font-family: -apple-system, sans-serif;
+    border: 1px solid #98c379;
+    border-radius: 99px;
+    padding: 4px 10px;
+    background: #f0f0f0;
+    font-size: 0.5rem;
+}
+
+.tag-creator button {
+    background: #98c379;
+    color: #282c34;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    line-height: 1;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    .app-container {
+        padding: 1rem;
+    }
+
+    .app-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .nav-button {
+        width: 100%;
+        text-align: left;
+        padding: 1rem;
+        border-bottom: 1px solid #444;
+        top: 0;
+    }
+
+    .nav-button.active {
+        border-bottom: 1px solid #61dafb;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
